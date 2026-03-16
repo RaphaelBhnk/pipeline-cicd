@@ -15,3 +15,9 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm run test
+      - name: Tests passed
+        if: success()
+        run: echo "Bravo tout a fonctionné"
+      - name: Tests failed
+        if: failure()
+        run: echo "Mince, il y a eu un souci"
